@@ -1,0 +1,31 @@
+{
+    "name": "alexmorbo/bas-ip-api-client",
+    "description": "PHP client for BAS IP API",
+    "keywords": [
+        "bas-ip",
+        "basip",
+        "api",
+        "client",
+        "intercom"
+    ],
+    "type": "library",
+    "require": {
+        "php": ">=8.2",
+        "guzzlehttp/guzzle": "^7.5",
+        "psr/log": "^3.0",
+        "nutgram/hydrator": "^4.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AlexMorbo\\BasIpApiClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aleksandr Nikitin",
+            "email": "alex@morbo.ru"
+        }
+    ],
+    "minimum-stability": "stable"
+}
