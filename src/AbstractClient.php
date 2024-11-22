@@ -4,6 +4,7 @@ namespace AlexMorbo\BasIpApiClient;
 
 use AlexMorbo\BasIpApiClient\Exceptions\BasIpException;
 use AlexMorbo\BasIpApiClient\Hydrator\BasIpHydrator;
+use AlexMorbo\BasIpApiClient\v1\Dto\Error;
 use Psr\Log\LoggerInterface;
 
 class AbstractClient
@@ -51,10 +52,13 @@ class AbstractClient
                 $this->basIp->getCredentials()->login,
                 $this->basIp->getCredentials()->password,
             );
-
-            $this->setAuth($auth);
+            if ($auth instanceof LoginInterface) {
+                $this->setAuth($auth);
+            }
+            if ($auth instanceof Error) {
+                throw new BasIpException($auth->error);
+            }
         }
-
         return $this->auth;
     }
 }
