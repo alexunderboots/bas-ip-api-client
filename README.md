@@ -40,3 +40,4 @@ $basIp->openLock(0);
 # [GET]  api/v1/photo/file
 $basIp->getCameraSnapshot();
 ```
+I forked the repository and enhanced the setAuth() function in the AbstractClient class by adding error handling to manage cases where incorrect variables are passed, ensuring appropriate exceptions are thrown.
